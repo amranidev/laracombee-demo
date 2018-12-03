@@ -165,6 +165,7 @@ return [
         /*
          * Package Service Providers...
          */
+        Amranidev\Laracombee\Providers\LaracombeeServiceProvider::class,
 
         /*
          * Application Service Providers...
