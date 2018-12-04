@@ -24,5 +24,6 @@ Route::group(['prefix' => 'books', 'as' => 'books.', 'middleware' => ['web', 'au
     Route::get('/', 'BookController@index')->name('index');
     Route::get('create', 'BookController@create')->name('create');
     Route::post('store', 'BookController@store')->name('store');
+    Route::get('show/{id}/book', 'BookController@show')->name('show');
 });
 
