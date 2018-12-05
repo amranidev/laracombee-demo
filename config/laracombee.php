@@ -11,8 +11,8 @@ return [
     |
     */
 
-    'database' => env('LARACOMBEE-DATABASE'),
-    'token'    => env('LARACOMBEE-TOKEN'),
+    'database' => env('LARACOMBEE_DATABASE'),
+    'token'    => env('LARACOMBEE_TOKEN'),
 
     /*
     |--------------------------------------------------------------------------
@@ -23,5 +23,5 @@ return [
     |
     */
 
-    'timeout'  => env('LARACOMBEE-TIMEOUT'),
+    'timeout'  => env('LARACOMBEE_TIMEOUT'),
 ];
