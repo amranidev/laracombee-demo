@@ -27,4 +27,13 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    /**
+     * Recombee user columns.
+     * 
+     * @var array
+     */
+    public static $laracombee = [
+        'name' => 'integer',
+    ];
 }
