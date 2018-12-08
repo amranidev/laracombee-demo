@@ -34,6 +34,6 @@ class User extends Authenticatable
      * @var array
      */
     public static $laracombee = [
-        'name' => 'integer',
+        'name' => 'string',
     ];
 }
