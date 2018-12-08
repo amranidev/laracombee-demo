@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Laracombee;
 use Illuminate\Http\Request;
 
 class BookController extends Controller
@@ -37,7 +38,7 @@ class BookController extends Controller
     public function store(Request $request)
     {
         \App\Book::create(array_merge(['user_id' => \Auth::user()->id], $request->all()));
-        
+
         return redirect()->route('books.index');
     }
 
@@ -50,7 +51,11 @@ class BookController extends Controller
     public function show($id)
     {
         $book = \App\Book::findOrFail($id);
-        
+
+        // Send the detailed view to recombee.
+        $detailedView = Laracombee::addDetailedView(auth()->user()->id, $id, []);
+        Laracombee::send($detailedView)->wait();
+
         return view('book.show', compact('book'));
     }
 
