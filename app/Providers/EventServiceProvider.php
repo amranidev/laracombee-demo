@@ -5,6 +5,7 @@ namespace App\Providers;
 use App\Book;
 use App\Events\BookIsCreated;
 use App\Listeners\AddBookToRecombee;
+use App\Listeners\AddUserToRecombee;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
@@ -20,6 +21,7 @@ class EventServiceProvider extends ServiceProvider
     protected $listen = [
         Registered::class => [
             SendEmailVerificationNotification::class,
+            AddUserToRecombee::class,
         ],
         BookIsCreated::class => [
             AddBookToRecombee::class
