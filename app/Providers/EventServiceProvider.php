@@ -2,6 +2,9 @@
 
 namespace App\Providers;
 
+use App\Book;
+use App\Events\BookIsCreated;
+use App\Listeners\AddBookToRecombee;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
@@ -18,6 +21,9 @@ class EventServiceProvider extends ServiceProvider
         Registered::class => [
             SendEmailVerificationNotification::class,
         ],
+        BookIsCreated::class => [
+            AddBookToRecombee::class
+        ]
     ];
 
     /**
@@ -29,6 +35,8 @@ class EventServiceProvider extends ServiceProvider
     {
         parent::boot();
 
-        //
+        Book::created(function ($book) {
+            event(new BookIsCreated($book));
+        });
     }
 }
