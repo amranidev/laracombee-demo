@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Book;
 use Laracombee;
 use Illuminate\Http\Request;
 
@@ -16,7 +17,10 @@ class BookController extends Controller
     {
         $books = \App\Book::paginate(6);
         
-        return view('book.index', compact('books'));
+        // Get recommended books for the current signed-in user.
+        $recommendedBooks = $this->getRecommendedBooks(5);
+
+        return view('book.index', compact('books', 'recommendedBooks'));
     }
 
     /**
@@ -91,5 +95,18 @@ class BookController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    /**
+     * Get Recommended Books.
+     * 
+     * @param  int $limit
+     * @return Illuminate\Support\Collection
+     */
+    public function getRecommendedBooks(int $limit)
+    {
+        $response = Laracombee::recommendTo(auth()->user(), $limit)
+        ->wait();
+        return Book::find($response['recomms']);
     }
 }
