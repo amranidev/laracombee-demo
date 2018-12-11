@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "amranidev/laracombee",
-            "version": "v0.1.15",
+            "version": "v0.1.20",
             "source": {
                 "type": "git",
                 "url": "https://github.com/amranidev/laracombee.git",
-                "reference": "cb97a032728f60f098e7df8a360a6c710dc3752a"
+                "reference": "8669a025dba7fa6e3dfad35c571091923a6f886e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/amranidev/laracombee/zipball/cb97a032728f60f098e7df8a360a6c710dc3752a",
-                "reference": "cb97a032728f60f098e7df8a360a6c710dc3752a",
+                "url": "https://api.github.com/repos/amranidev/laracombee/zipball/8669a025dba7fa6e3dfad35c571091923a6f886e",
+                "reference": "8669a025dba7fa6e3dfad35c571091923a6f886e",
                 "shasum": ""
             },
             "require": {
@@ -60,7 +60,7 @@
                 "recombee",
                 "recommendation system"
             ],
-            "time": "2018-12-03T22:39:14+00:00"
+            "time": "2018-12-09T14:51:08+00:00"
         },
         {
             "name": "dnoegel/php-xdg-base-dir",
