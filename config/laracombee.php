@@ -24,4 +24,6 @@ return [
     */
 
     'timeout'  => env('LARACOMBEE_TIMEOUT'),
+
+    'protocol' => env('LARACOMBEE_PROTOCOL'),
 ];
