@@ -25,5 +25,26 @@ return [
 
     'timeout'  => env('LARACOMBEE_TIMEOUT'),
 
+    /*
+    |--------------------------------------------------------------------------
+    | Default protocol for sending requests.
+    |--------------------------------------------------------------------------
+    |
+    | Here where you can define the default protocol for sending requests.
+    |
+    */
+
     'protocol' => env('LARACOMBEE_PROTOCOL'),
+
+    /*
+    |--------------------------------------------------------------------------
+    | Default models for user and item.
+    |--------------------------------------------------------------------------
+    |
+    | Here where you can define the default class for user and item.
+    |
+    */
+
+    'user'     => app(\App\User::class),
+    'item'     => app(\App\Book::class),
 ];
