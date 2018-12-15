@@ -41,8 +41,10 @@ class BookController extends Controller
      */
     public function store(Request $request)
     {
-        \App\Book::create(array_merge(['user_id' => \Auth::user()->id], $request->all()));
+        $book = \App\Book::create(array_merge(['user_id' => \Auth::user()->id], $request->all()));
 
+        $request = Laracombee::addItem($book);
+        Laracombee::send($request);
         return redirect()->route('books.index');
     }
 
